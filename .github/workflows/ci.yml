@@ -52,7 +52,7 @@ jobs:
 
       - name: Guardar reportes de pruebas
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: reportes-pruebas
           path: |
