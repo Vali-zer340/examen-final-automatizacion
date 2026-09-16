@@ -168,6 +168,15 @@ Reportes
 
 Los reportes de Maven Surefire y Failsafe se almacenan como artifacts del workflow.
 
+
+---
+
+## Ejecución de pipelines
+
+El pipeline de integración continua se ejecuta automáticamente ante `push` en las ramas `main`, `develop` y `feature/**`, además de `pull_request` hacia `main` y `develop`.
+
+El Deployment Pipeline se ejecuta automáticamente al realizar cambios en las ramas configuradas en el workflow `deployment.yml`.
+
 ---
 
 ## Deployment Pipeline
@@ -257,20 +266,27 @@ mvn test -Pacceptance
 
 ## Evidencias
 
-Durante el desarrollo se obtuvieron evidencias de:
+A continuación se presentan evidencias de ejecución de los principales pipelines implementados en el proyecto.
 
-- configuración del proyecto Maven;
-- ejecución de pruebas unitarias;
-- configuración del flujo Git;
-- ejecución de pruebas unitarias e integración;
-- ejecución exitosa del pipeline CI;
-- generación de artifacts de pruebas;
-- ejecución de Acceptance Tests;
-- deployment pipeline exitoso;
-- despliegue en ambiente de pruebas;
-- ejecución y validación del rollback.
+### Pipeline de Integración Continua
 
-Las capturas correspondientes se incluyen en la documentación final del examen.
+La siguiente evidencia muestra la ejecución correcta del pipeline de integración continua, incluyendo las etapas de build y pruebas automatizadas.
+
+![Pipeline CI](docs/evidencias/pipeline-ci.png)
+
+### Deployment Pipeline
+
+La siguiente evidencia muestra el flujo completo del pipeline de despliegue con sus etapas de build, pruebas, acceptance tests, despliegue y rollback.
+
+![Deployment Pipeline](docs/evidencias/deployment-pipeline.png)
+
+### Rollback
+
+La siguiente evidencia muestra la validación del rollback y la restauración de la versión anterior.
+
+![Rollback](docs/evidencias/rollback.png)
+
+Las capturas utilizadas corresponden a ejecuciones reales realizadas durante el desarrollo del examen.
 
 ---
 
